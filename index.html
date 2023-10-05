@@ -1,11 +1,23 @@
 <!doctype html>
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <title>We are the Champions</title>
+    <head>
+        <title>Recognitions</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="index.js" defer></script>
     </head>
     <body>
-        <h1>We are the Champions</h1>
-        <script src="index.js"></script>
+        <div class="container">
+            <img src="assets/freddie.png" />
+            <h1>Recognitions</h1>
+            <input id="inputRecognition" type="text" id="input-field" placeholder="Recognition goes here...">
+            <div class="toFromDiv">
+                <input class="toFromInput" type="text" placeholder="To">
+                <input class="toFromInput" type="text" placeholder="From">
+            </div>
+            <button>Publish</button>
+            <ul id="recognition-list"></ul>
+        </div>
     </body>
 </html>
