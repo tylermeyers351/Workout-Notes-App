@@ -36,10 +36,10 @@ img {
 }
 
 button {
-    color: black;
-    background-color: #5d6066;
+    color: #04131C;
+    background-color: #28A9F1;
     border: 0;
-    padding: 5px;
+    padding: 15px 5px;
     border-radius: 5px;
     font-weight: bolder;
     font-size: 18px;
