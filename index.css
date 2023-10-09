@@ -13,8 +13,8 @@ p {
 h2, h3 {
     text-align: center;
     color: white;
-    padding: 2px 0px;
-    margin: 2px 0px;
+    padding: 0;
+    margin: 0;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -22,7 +22,6 @@ input {
     color: #432000;
     background-color: #DCE1EB;
     border: 0;
-    padding: 5px;
     border-radius: 5px;
     font-size: 14px;
     text-align: center;
@@ -31,7 +30,7 @@ input {
 }
 
 img {
-    width: 100px;
+    width: 20%;
     margin: 0 auto;
 }
 
@@ -46,6 +45,7 @@ button {
     text-align: center;
     font-family: 'Rubik', sans-serif;
     margin: 10px 0;
+    width: 100%;
 }
 
 ul, li {
@@ -56,12 +56,14 @@ ul, li {
 .container {
     display: flex;
     flex-direction: column;
-    max-width: 320px;
     margin: 0px auto;
     margin-top: 20px;
+    justify-content: center;
+    text-align: center;
 }
 
 #inputRecognition {
+    width: 100%;
     text-align: start;
     min-height: 100px;
     color: #8F8F8F;
