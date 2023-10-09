@@ -65,7 +65,7 @@ ul, li {
 #inputRecognition {
     width: 100%;
     text-align: start;
-    min-height: 100px;
+    line-height: 2;
     color: #8F8F8F;
     background-color: #444059;
 }
