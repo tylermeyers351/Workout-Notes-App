@@ -5,6 +5,11 @@ html, body {
     color: white;
 }
 
+h3, p {
+    margin:0;
+    padding: 0;
+}
+
 img {
     width: 20%;
 }
@@ -14,4 +19,10 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+@media (min-width: 992px) {
+    .custom-lg-padding {
+      margin-top: 60px;
+    }
+  }
 
