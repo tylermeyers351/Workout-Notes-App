@@ -34,23 +34,23 @@
                         </div>
 
                         <div class="mb-2">
-                            <textarea class="form-control" data-bs-theme="dark" id="exampleFormControlTextarea1" rows="1" placeholder="Title"></textarea>
+                            <textarea class="form-control" data-bs-theme="dark" id="formTitle" rows="1" placeholder="Title"></textarea>
                         </div>
                         
                         <div class="mb-2">
-                            <textarea class="form-control" data-bs-theme="dark" id="exampleFormControlTextarea1" rows="4" placeholder="Content"></textarea>
+                            <textarea class="form-control" data-bs-theme="dark" id="formContent" rows="4" placeholder="Content"></textarea>
                         </div>
                         <div class="d-grid gap-2">
-                            <button class="btn btn-primary" type="button">Submit</button>
+                            <button class="btn btn-primary" id="submitButton" type="button">Submit</button>
                         </div>
                     </form>
                 </div>
 
-                <!-- List of notes -->
+                <!-- List of notes (Will be generated via JavaScript) -->
                 <div class="px-3 col-12 col-lg-8 custom-lg-padding">
-                    <ul>
+                    <ul id="notesListing">
                         <li class="border rounded p-3 mb-2">
-                            <p class="text-left fw-bold">Hamstring development - Pull</p>
+                            <p class="fw-bold">Sample title - Pull</p>
                             <p class="small">10/9/2023</p>
                             <p class="small">The key to hamstring development is applying tension at all ranges of motion. And all I can say to that is woah...</p>
                         </li>
@@ -60,14 +60,7 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="index.js"></script>
-        <style>
-            @media (min-width: 992px) {
-              .custom-lg-padding {
-                padding: 20px;
-              }
-            }
-          </style>
+        <script src="index.js" type="module"></script>
           
     </body>
 </html>
