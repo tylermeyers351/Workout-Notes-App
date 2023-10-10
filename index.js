@@ -2,17 +2,27 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
-    databaseURL: ""
+    databaseURL: "https://realtime-database-d0536-default-rtdb.firebaseio.com/"
 }
 
-// Elements
+// Initialize Firebase server settings.
+const app = initializeApp(appSettings)
+const database = getDatabase(app)
+const notesListingInDB = ref(database, "notesListing")
+
+onValue(notesListingInDB, function(snapshot) {
+    const data = snapshot.val()
+    console.log(data[0])
+})
+
+// Elements to store.
 const categoryEl = document.querySelector('#inputState')
 const titleEl = document.querySelector('#formTitle')
 const contentEl = document.querySelector('#formContent')
 const submitButtonEl = document.querySelector('#submitButton')
 const listingEl = document.querySelector('#notesListing')
 
-// Store the date
+// Store the date.
 const d = new Date()
 const dateObject = {
     year: d.getFullYear(),
@@ -20,9 +30,23 @@ const dateObject = {
     day: d.getDate()
 }
 
+// Add an event listener to the submit button and run functions when submitted.
 submitButtonEl.addEventListener('click', function() {
+    updateServer(titleEl.value, categoryEl.value, contentEl.value) 
     updateListing(titleEl.value, categoryEl.value, contentEl.value)
 })
+
+// Function that updates the server with a new listing object (from the form values).
+function updateServer(titleValue, categoryValue, contentValue) {
+    const listingObject = {
+        title: titleValue,
+        category: categoryValue,
+        content: contentValue,
+        date: dateObject
+    }
+
+    push(notesListingInDB, listingObject)
+}
 
 // Function that updates the listing with the newly added listing object (and clears form values).
 function updateListing(titleValue, categoryValue, contentValue) {
