@@ -29,7 +29,8 @@ onValue(notesListingInDB, function(snapshot) {
     if (snapshot.exists()) {
         let notesArray = Object.values(snapshot.val())
 
-        listingEl.innerHTML = ""
+        // Don't forget to uncomment this ///////////////////////////////////////////////////////////////
+        // listingEl.innerHTML = ""
 
         for (let i = notesArray.length - 1; i >= 0; i --) {
             let note = notesArray[i]

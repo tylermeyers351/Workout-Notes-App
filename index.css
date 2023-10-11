@@ -20,9 +20,26 @@ ul {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 @media (min-width: 992px) {
     .custom-lg-padding {
       margin-top: 77px;
     }
   }
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
 
