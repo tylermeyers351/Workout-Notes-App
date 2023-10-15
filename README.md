@@ -11,4 +11,4 @@ So, this is it. I created a simple Progressive Web App (PWA) designed to be used
 
 ## Website
 
-Visit [here](https://workout-notes.netlify.app/) to see the app. It's desktop friendly, but built to be used as a PWA on mobile. Currently only read-only for anyone visiting.
+Visit [here](https://workout-notes.netlify.app/) to see the app. It's desktop friendly, but built to be used as a PWA on mobile.
