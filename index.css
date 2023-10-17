@@ -42,4 +42,27 @@ a:hover {
     text-align: right;
 }
 
+/* Shared styles for both delete and edit buttons */
+.button {
+    padding: 0;
+    background: none;
+    border: none;
+    color: lightblue;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Specific styles for the delete button */
+  .delete-button:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  
+  /* Specific styles for the edit button */
+  .edit-button:hover {
+    text-decoration: underline;
+    color: blue;
+  }
+  
+
 
