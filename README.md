@@ -8,6 +8,9 @@ After years of logging notes on the Notes app or Google Sheets on my phone, I wa
 
 So, this is it. I created a simple Progressive Web App (PWA) designed to be used on my phone (or desktop), wherever I am. It leverages Firebase as its server and backend infrastructure for various functionalities. Firebase is a cloud-based platform that provides services such as a real-time database, authentication, and more. Bootstrap was used for styling.
 
+## Learning goals  
+
+To practice programming with JavaScript, utilizing the Firebase Realtime Database, and styling with Bootstrap.
 
 ## Website
 
