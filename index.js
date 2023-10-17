@@ -16,6 +16,7 @@ const titleEl = document.querySelector('#formTitle')
 const contentEl = document.querySelector('#formContent')
 const submitButtonEl = document.querySelector('#submitButton')
 const listingEl = document.querySelector('#notesListing')
+const filterCategoryEl = document.querySelector('#categoryFilter')
 
 // Store the date.
 const d = new Date()
@@ -24,6 +25,22 @@ const dateObject = {
     month: d.getMonth() + 1,
     day: d.getDate()
 }
+
+filterCategoryEl.addEventListener('change', function() {
+    const selectedCategory = filterCategoryEl.value
+    const listItems = document.querySelectorAll('#notesListing li')
+    
+    listItems.forEach(listItem => {
+        const categoryClasses = listItem.classList
+
+        if (selectedCategory === 'All Categories' || selectedCategory === 'Filter for category' || categoryClasses.contains(selectedCategory)) {
+            listItem.style.display = 'block'
+        } else {
+            listItem.style.display = 'none'
+        }
+    })
+    
+})
 
 // Listens for when the submit button is clicked, updates server, and resets form values.
 submitButtonEl.addEventListener('click', async function() {
@@ -61,12 +78,13 @@ function updateServer(titleValue, categoryValue, contentValue) {
 // When change occurs, update listing in <ul> tag with all database items.
 onValue(notesListingInDB, function(snapshot) {
     if (snapshot.exists()) {
-        let notesArray = Object.values(snapshot.val())
+        let notesArray = Object.entries(snapshot.val())
     
         listingEl.innerHTML = ""
 
         for (let i = notesArray.length - 1; i >= 0; i --) {
-            let note = notesArray[i]
+            let id = notesArray[i][0]
+            let note = notesArray[i][1]
             
             let category = note.category
             let title = note.title
@@ -77,25 +95,26 @@ onValue(notesListingInDB, function(snapshot) {
             let day = note.date.day
 
             // Updates the <ul> with all of list items from the database.
-            updateListItem(title, category, content, month, day, year)
+            updateListItem(id, title, category, content, month, day, year)
         }
     } else {
         listingEl.innerHTML = "No items"
     }
+    addDeleteButtonListeners()
 })
 
 // Clears form values.
 function resetValues() {
     categoryEl.selectedIndex = 0
+    filterCategoryEl.selectedIndex = 0
     titleEl.value = ""
     contentEl.value = ""
 }
 
 // Function that creates new <li> element (with formatting) and appends to <ul> element.
-function updateListItem(titleValue, categoryValue, contentValue, month, day, year) {
-
+function updateListItem(id, titleValue, categoryValue, contentValue, month, day, year) {
     let newEl = document.createElement('li')
-    newEl.classList.add('border', 'rounded', 'px-3', 'pt-3', 'pb-2', 'mb-2')
+    newEl.classList.add('border', 'rounded', 'px-3', 'pt-3', 'pb-2', 'mb-2', categoryValue)
 
     // Create first div (this will hold title and category).
     const div1 = document.createElement('div')
@@ -134,10 +153,12 @@ function updateListItem(titleValue, categoryValue, contentValue, month, day, yea
     div2.appendChild(editText)
 
     // Create a link for deleting and append it to the second <div>
-    const deleteText = document.createElement('button')
-    deleteText.classList.add('small', 'text-right', 'delete-button', 'button')
-    deleteText.textContent = 'Delete'
-    div2.appendChild(deleteText)
+    const deleteButton = document.createElement('button')
+    deleteButton.classList.add('small', 'text-right', 'delete-button', 'button')
+    deleteButton.textContent = 'Delete'
+    // Create a data-attribute so when clicked, we will know which item to delete.
+    deleteButton.setAttribute('data-id', id)
+    div2.appendChild(deleteButton)
 
     // Append <li> tag.
     newEl.append(div1)
@@ -148,3 +169,22 @@ function updateListItem(titleValue, categoryValue, contentValue, month, day, yea
     // Append <ul> tag.
     listingEl.append(newEl)    
 }
+
+// Function add event listeners to every delete button (called in onValue event listener).
+function addDeleteButtonListeners() {
+    const deleteButtons = document.querySelectorAll('.delete-button')
+
+    deleteButtons.forEach(deleteButton => {
+        deleteButton.addEventListener('click', function() {
+            const itemKey = deleteButton.getAttribute('data-id')
+            if (itemKey) {
+                let locationInDB = ref(database, `notesListing/${itemKey}`)
+                remove(locationInDB)
+                console.log("Item was deleted")
+                resetValues()
+            }
+        })
+    })
+}
+
+

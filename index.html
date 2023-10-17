@@ -22,11 +22,11 @@
                     <form class="border rounded p-3">
                         <div class="form-group mb-2">
                             <select id="inputState" data-bs-theme="dark" class="form-control">
-                              <option selected>General</option>
-                              <option>Push</option>
-                              <option>Pull</option>
-                              <option>Legs</option>
-                              <option>Mobility</option>
+                                <option selected>General</option>
+                                <option>Push</option>
+                                <option>Pull</option>
+                                <option>Legs</option>
+                                <option>Mobility</option>
                             </select>
                         </div>
 
@@ -45,7 +45,19 @@
 
                 <!-- List of notes (Will be generated via JavaScript) -->
                 <div class="px-3 col-12 col-lg-8 custom-lg-padding">
-                    <h4 class="text-center pb-2"> - Select Category - </h4>
+                    <!-- <h4 class="text-center pb-2"> - Select Category - </h4> -->
+                    <div class="border mb-3 hide-border"></div>
+                    <div class="form-group mb-3">
+                        <select id="categoryFilter" data-bs-theme="dark" class="form-control">
+                            <option selected>All Categories</option>  
+                            <option>General</option>
+                            <option>Push</option>
+                            <option>Pull</option>
+                            <option>Legs</option>
+                            <option>Mobility</option>
+                        </select>
+                    </div>
+
                     <ul id="notesListing">
                         <!-- <li class="border rounded px-3 pt-3 pb-2 mb-2">
                             <div class="mb-1 d-flex justify-content-between">

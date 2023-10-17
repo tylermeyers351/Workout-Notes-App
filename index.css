@@ -30,7 +30,11 @@ a:hover {
 
 @media (min-width: 992px) {
     .custom-lg-padding {
-      margin-top: 77px;
+      margin-top: 24px;
+    }
+
+    .hide-border {
+        display: none;
     }
   }
 
