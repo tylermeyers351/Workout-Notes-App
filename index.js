@@ -100,7 +100,7 @@ onValue(notesListingInDB, function(snapshot) {
     } else {
         listingEl.innerHTML = "No items"
     }
-    addDeleteButtonListeners()
+    addButtonListeners()
 })
 
 // Clears form values.
@@ -147,14 +147,14 @@ function updateListItem(id, titleValue, categoryValue, contentValue, month, day,
     div2.classList.add('d-flex', 'justify-content-between')
 
     // Create a link for editing and append it to the second <div>
-    const editText = document.createElement('button')
-    editText.classList.add('small', 'text-left', 'edit-button', 'button')
-    editText.textContent = 'Edit'
-    div2.appendChild(editText)
+    // const editButton = document.createElement('button')
+    // editButton.classList.add('small', 'text-left', 'edit-button', 'button')
+    // editButton.textContent = 'Edit'
+    // div2.appendChild(editButton)
 
     // Create a link for deleting and append it to the second <div>
     const deleteButton = document.createElement('button')
-    deleteButton.classList.add('small', 'text-right', 'delete-button', 'button')
+    deleteButton.classList.add('small', 'text-left', 'delete-button', 'button')
     deleteButton.textContent = 'Delete'
     // Create a data-attribute so when clicked, we will know which item to delete.
     deleteButton.setAttribute('data-id', id)
@@ -171,7 +171,7 @@ function updateListItem(id, titleValue, categoryValue, contentValue, month, day,
 }
 
 // Function add event listeners to every delete button (called in onValue event listener).
-function addDeleteButtonListeners() {
+function addButtonListeners() {
     const deleteButtons = document.querySelectorAll('.delete-button')
 
     deleteButtons.forEach(deleteButton => {
@@ -185,6 +185,7 @@ function addDeleteButtonListeners() {
             }
         })
     })
+
 }
 
 
