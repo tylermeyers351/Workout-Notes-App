@@ -1,8 +1,8 @@
 # Workout Notes App
 
 Project completion: October 2023  
-[Website](https://workout-notes.netlify.app/)  
-[Youtube demo](https://youtu.be/1jBQOzhnCpg)
+See the website here -> https://workout-notes.netlify.app/   
+Youtube demo here -> https://youtu.be/1jBQOzhnCpg  
 
 ## Summary
 
