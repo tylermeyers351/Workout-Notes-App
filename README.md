@@ -1,6 +1,8 @@
 # Workout Notes App
 
-Project completion: October 2023  
+Project completion: October 2023
+[See the website here](https://workout-notes.netlify.app/)
+[Youtube demo](https://youtu.be/1jBQOzhnCpg)
 
 ## Summary
 
@@ -12,8 +14,3 @@ So, this is it. I created a simple Progressive Web App (PWA) designed to be used
 
 To practice programming with JavaScript, utilizing the Firebase Realtime Database, and styling with Bootstrap.
 
-## Website
-
-Visit [here](https://workout-notes.netlify.app/) to see the app. It's desktop friendly, but built to be used as a PWA on mobile. Please note, the website is read-only for users other than myself.  
-
-See youtube demonstration [here](https://youtu.be/1jBQOzhnCpg).
