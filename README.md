@@ -12,5 +12,5 @@ So, this is it. I created a simple Progressive Web App (PWA) designed to be used
 
 ## Learning goals  
 
-To practice programming with JavaScript, utilizing the Firebase Realtime Database, and styling with Bootstrap.    
+To practice programming with JavaScript, utilizing the Firebase Realtime Database, and styling with Bootstrap.     
 
